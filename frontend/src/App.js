@@ -19,46 +19,10 @@ export default class App extends Component {
 
     };
 
-
-
-    loadAPI() {
-        const url = "http://127.0.0.1:8000/api/burners/";
-        axios.get(url).then(response =>{this.setState({
-            burners:response.data
-        })})
-    }
-
-
-
-    componentDidMount() {
-       this.loadAPI();
-        console.log(this.state.burners)
-    }
-
-
-    handleClick(e){
-        e.preventDefault();
-        console.log(e.target)
-    }
-
     render() {
         return (
             <Fragment>
                 <Header></Header>
-                <h1>hello world app</h1>
-
-                <Button color="primary" variant="contained" onClick={this.handleClick.bind(this)}>Press</Button>
-                {console.log(this.state.burners)}
-                <ul>
-                    {
-                        this.state.burners.map(item=>{
-                            return <Burner item={item}/>
-                        })
-                    }
-                </ul>
-                <BurnerCard/>
-                <BurnerCard/>
-
             </Fragment>
         )
     }
