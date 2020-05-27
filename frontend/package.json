@@ -4,9 +4,9 @@
   "description": "BS frontend",
   "main": "index.js",
   "scripts": {
-    "clean":"rm -rf ../backend/static/*.css && rm -rf ../backend/static/*.js",
+    "clean": "rm -rf ../backend/static/*.css && rm -rf ../backend/static/*.js",
     "build": "webpack --config webpack/webpack.prod.js",
-    "prod":"npm run clean && npm run build && npm run copy-buildfiles",
+    "prod": "npm run clean && npm run build && npm run copy-buildfiles",
     "dev": "webpack-dev-server --config webpack/webpack.dev.js --open --colors",
     "copy-buildfiles": "npm run copy-build-js && npm run copy-build-css",
     "copy-build-logo": "copyfiles -f 'build/static/media/*' '../staticfiles/img/'",
@@ -41,8 +41,13 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
     "axios": "^0.19.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "thunk": "0.0.1"
   }
 }
