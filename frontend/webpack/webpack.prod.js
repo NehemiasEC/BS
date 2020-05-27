@@ -14,7 +14,7 @@ module.exports = merge(common, {
   mode: "production",
   output: {
     filename: "[name].[contentHash].bundle.js",
-    path: path.resolve(__dirname, "../dist/static/dist")
+    path: path.resolve(__dirname, "../dist/static/")
   },
   optimization: {
     minimizer: [
@@ -33,10 +33,6 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
     new CleanWebpackPlugin(),
-    new WebpackBundleTracker({
-      path:__dirname,
-      filename:"../dist/webpack-stats.json"
-    })
   ],
   module: {
     rules: [

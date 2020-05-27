@@ -1,4 +1,5 @@
-{% load render_bundle from webpack_loader %}
+{% load render_react %}
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +11,7 @@
   </head>
   <body>
     <section id="App">
-      {% render_bundle 'main' %}
+      {% render_react %}
     </section>
   </body>
 </html>

@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
 import os
+import pathlib
+from datetime import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = pathlib.Path(__file__).parent.parent
+PROJECT_ROOT= BASE_DIR.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -33,6 +35,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.Dashboard',
+    'apps.base',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'webpack_loader',
     'burners',
     'API'
 ]
@@ -75,9 +78,10 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = [
+    BASE_DIR.joinpath('static'),
+]
+
 
 WSGI_APPLICATION = 'BS.wsgi.application'
 
@@ -130,19 +134,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticroot')
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'dist/', # must end with slash
-        'STATS_FILE': os.path.join(BASE_DIR, 'static/webpack-stats.json'),
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': [r'.+\.hot-update.js', r'.+\.map'],
-        'LOADER_CLASS': 'webpack_loader.loader.WebpackLoader',
-    }
-}
-
-
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
@@ -150,3 +141,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+
