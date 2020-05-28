@@ -32,5 +32,5 @@ export const addBurner = burner =>dispatch=>{
         type:ADD_BURNER,
         payload:res.data
     }))
-    .catch(e=>console.log(e))
+    .catch(e=>console.log(e.response.data))
 }
