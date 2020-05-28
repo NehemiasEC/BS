@@ -1,5 +1,5 @@
 import axios from "axios"
-import {GET_BURNERS,DELETE_BURNER} from "./types"
+import {GET_BURNERS,DELETE_BURNER,ADD_BURNER} from "./types"
 
 
 export const getBurners = ()=>dispatch =>{
@@ -24,4 +24,13 @@ export const deleteBurner=(burnerID)=>dispatch=>{
         })
     })
     .catch(e => console.log(e))
+}
+
+export const addBurner = burner =>dispatch=>{
+    axios.post('/api/burners/',burner)
+    .then(res=>dispatch({
+        type:ADD_BURNER,
+        payload:res.data
+    }))
+    .catch(e=>console.log(e))
 }

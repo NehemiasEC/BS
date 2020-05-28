@@ -9,6 +9,7 @@ import store from './store'
 
 
 import Header from "./components/layout/Header"
+import BurnerForm from "./components/burners/BurnerForm"
 
 import Burner from "./components/burners/Burner";
 import BurnerCard from "./components/burners/BurnerCard";
@@ -19,6 +20,7 @@ export default class App extends Component {
             <Provider store={store}>
                 <Fragment>
                     <Header></Header>
+                    <BurnerForm/>
                     <Burner/>
                 </Fragment>  
             </Provider>
