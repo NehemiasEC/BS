@@ -1,4 +1,4 @@
-import {GET_BURNERS,DELETE_BURNER} from "../actions/types"
+import {GET_BURNERS,DELETE_BURNER, ADD_BURNER} from "../actions/types"
 
 
 const initialState = {
@@ -17,6 +17,12 @@ export default function(state=initialState,action){
             return{
                 ...state,
                 burners:state.burners.filter(burner=> burner.id !== action.payload)
+            }
+
+        case ADD_BURNER:
+            return{
+                ...state,
+                burners:[...state.burners, action.payload]
             }
         default:
             return state
