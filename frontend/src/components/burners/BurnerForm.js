@@ -10,6 +10,10 @@ class BurnerForm extends Component {
         min_pressure:"20.2",
         fuel_type:"GAS"
     }
+
+    static propTypes = {
+        addBurner: PropTypes.func.isRequired
+    }
     
     onChange = e=> this.setState({[e.target.name]:e.target.value})
 
@@ -29,7 +33,7 @@ class BurnerForm extends Component {
             <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-3">
-                    <form onSubmit={this.onSubmit}>
+                    <form onSubmit={this.onSubmit} className="form-inline">
                         
                             <label for="Name">Name</label>
                             <input type="text" value={name} name="name" id="name" placeholder="Name" onChange={this.onChange}/> 
