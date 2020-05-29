@@ -1,5 +1,5 @@
 
-![BS logo](https://ibb.co/VNj09cc)
+![Markdown logo](https://ibb.co/VNj09cc)
 
 # Building Status
 ### Building Automation System
