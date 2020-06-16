@@ -14,6 +14,8 @@ class Burner(models.Model):
     min_pressure = models.DecimalField(decimal_places=2,max_digits=5)
     fuel_type = models.CharField(choices=TYPE_OF_FUEL_CHOICES, max_length=10, default="GAS")
 
+    
+
     def __str__(self):
         return self.name
 

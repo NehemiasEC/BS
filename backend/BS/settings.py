@@ -37,6 +37,8 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 INSTALLED_APPS = [
     'apps.Dashboard',
     'apps.base',
+    'buildingstatux.combustion',
+    'buildingstatux.analisis',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
