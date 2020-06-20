@@ -1,9 +1,16 @@
 from rest_framework import serializers
 from burners.models import Burner
+from buildingstatux.combustion.models import CombustionAnalysisTest
 
-
-class BurnerSeriliazerModel(serializers.ModelSerializer):
+class BurnerSerializerModel(serializers.ModelSerializer):
 
     class Meta:
         model = Burner
-        fields = ['id','name','model','min_pressure','fuel_type']
+        fields = ("__all__")
+
+
+class CombustionAnalisisTestSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = CombustionAnalysisTest
+        fields = ("__all__")

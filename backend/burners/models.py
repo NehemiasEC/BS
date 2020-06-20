@@ -17,6 +17,6 @@ class Burner(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return "{0}".format(self.name)
 
 
