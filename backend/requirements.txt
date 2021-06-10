@@ -24,7 +24,7 @@ defer==1.0.6
 distlib==0.3.0
 distro==1.4.0
 distro-info===0.23ubuntu1
-Django==3.0.4
+Django==3.1.12
 django-cors==0.1
 django-rest-framework==0.1.0
 django-rest-knox==4.1.0
